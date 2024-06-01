@@ -4,15 +4,15 @@ use crate::window::Fullscreen as RootFullscreen;
 #[cfg(windows_platform)]
 #[path = "windows/mod.rs"]
 mod platform;
-#[cfg(any(x11_platform, wayland_platform))]
+#[cfg(any(x11_platform, wayland_platform, android_platform))]
 #[path = "linux/mod.rs"]
 mod platform;
 #[cfg(macos_platform)]
 #[path = "macos/mod.rs"]
 mod platform;
-#[cfg(android_platform)]
-#[path = "android/mod.rs"]
-mod platform;
+//#[cfg(android_platform)]
+//#[path = "android/mod.rs"]
+//mod platform;
 #[cfg(ios_platform)]
 #[path = "ios/mod.rs"]
 mod platform;
