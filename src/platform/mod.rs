@@ -3,7 +3,7 @@
 //! Only the modules corresponding to the platform you're compiling to will be available.
 
 #[cfg(any(android_platform, docsrs))]
-pub mod android;
+//pub mod android;
 #[cfg(any(ios_platform, docsrs))]
 pub mod ios;
 #[cfg(any(macos_platform, docsrs))]
@@ -18,7 +18,7 @@ pub mod wayland;
 pub mod web;
 #[cfg(any(windows_platform, docsrs))]
 pub mod windows;
-#[cfg(any(x11_platform, docsrs))]
+#[cfg(any(x11_platform, android_platform, docsrs))]
 pub mod x11;
 
 #[cfg(any(
@@ -47,9 +47,10 @@ pub mod pump_events;
     x11_platform,
     wayland_platform,
     orbital_platform,
+    android_platform,
     docsrs
 ))]
 pub mod modifier_supplement;
 
-#[cfg(any(windows_platform, macos_platform, x11_platform, wayland_platform, docsrs))]
+#[cfg(any(windows_platform, macos_platform, android_platform,x11_platform, wayland_platform, docsrs))]
 pub mod scancode;
